@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('registration-form');
+  // Step 1: Form Selection
+  const form = document.getElementById('registration-form');
 
   // Step 2: Feedback Division Selection
   const feedbackDiv = document.getElementById('form-feedback');
@@ -16,8 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const trimmedUsername = usernameInput.value.trim();
     const trimmedEmail = emailInput.value.trim();
     const trimmedPassword = passwordInput.value.trim();
-
-    // Step 5: Validation Logic
+// Step 5: Validation Logic
     let isValid = true;
     const messages = [];
 
@@ -29,12 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Email Validation
     if (!trimmedEmail.includes('@') || !trimmedEmail.includes('.')) {
-        isValid = false;
+      isValid = false;
       messages.push('Please enter a valid email address.');
     }
-
-    // Password Validation
-    if (trimmedPassword.length < 8) {
+      if (trimmedPassword.length < 8) {
       isValid = false;
       messages.push('Password must be at least 8 characters long.');
     }
@@ -50,4 +48,4 @@ document.addEventListener('DOMContentLoaded', function () {
       feedbackDiv.style.color = '#dc3545';
     }
   });
-})
+});
